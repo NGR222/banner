@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>banner of the sea</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body class="page">
+
+  <div id="popup" class="popup">
+    <div class="popup__content">
+      <span id="close-popup" class="popup__close">&times;</span>
+      <p>ООО «СЗ «НДК – МОРЕ»</p>
+      <p>ИНН: 9103012773</p>
+      <p>erid: 2SDnjdEjNYj</p>
+    </div>
+  </div>
+
+  <a href="https://morecrimea.ru/"  target="_blank">
+    <article class="banner">
+      <button id="open-popup" class="popup-button">Реклама</button>
+      <div class="banner__left">
+        <h1 class="banner__titel">Паркинг <span class="parking-icon"><img class="banner__titel-image" src="./mzl.png" alt=""></span>  в подарок!</h1>
+        <p class="banner__text">
+          при покупке 3-х комнатной квартиры
+        </p>
+      </div>
+      <div class="banner__right">
+         <img src="./house.png" alt="Жилой комплекс" class="banner__image" >
+        <div class="banner__logo-container">
+          <img src="./logo.png" alt="Море Жилой Комплекс" class="sea">
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const openPopupButton = document.getElementById('open-popup');
+    const closePopupButton = document.getElementById('close-popup');
+
+    openPopupButton.addEventListener('click', (event) => {
+    event.stopPropagation(); 
+    event.preventDefault();
+    popup.style.display = 'flex';
+    });
+
+    closePopupButton.addEventListener('click', () => {
+      popup.style.display = 'none'; 
+    });
+
+    popup.addEventListener('click', (event) => {
+       if (event.target === popup) {
+         popup.style.display = 'none';
+       }
+     });
+  </script>
+
+</body>
+</html>
